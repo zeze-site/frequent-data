@@ -1,6 +1,6 @@
 # frequent-data
 
-用于在本地进行一些常用数据的记录和导出
+用于在本地进行一些常用数据的记录和导出 [demo](http://zeze-site.github.io/frequent-data/demo.html)
 
 ## 记录
 
