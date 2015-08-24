@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>配置常用数据</h2>
+    <div>
+        <label for="max-show">最多显示：<input id="max-show" type="range" min="0" max="10"><span>当前数值：<em></em></span></label>
+        <label for="max-cache">最多记录：<input id="max-cache" type="range" min="0" max="30"><span>当前数值：<em></em></span></label>
+    </div>
+    <h2>点击下面方块，模拟“使用”</h2>
+    <div id="click-area">
+        <button>item1</button>
+        <button>item2</button>
+        <button>item3</button>
+        <button>item4</button>
+    </div>
+    <button id="add-more">add more</button>
+    <h2>实时更新常用数据</h2>
+    <div id="show-area">
+    </div>
+
+    <script type="text/html" id="template-button">
+{{each data as value index}}
+<button>{{value.id}}{{if value.isShow}}--使用次数{{value.count}}{{/if}}</button>
+{{/each}}
+    </script>
+    <script src="bower_components/requirejs/require.js" data-main="demo"></script>
+</body>
+</html>
