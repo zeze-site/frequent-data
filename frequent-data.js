@@ -8,7 +8,7 @@
  * 保证常用表情的数量不超过最大限制
  */
 
-define(function(require){
+(function(require){
     var $ = require('jquery'),
         lcStorage = require('lcStorage');
 
@@ -229,5 +229,12 @@ define(function(require){
         return outData;
     };
 
-    return FrequentData;
-});
+    // CommonJS AMD 
+    if ( typeof define === "function" && define.amd) {
+        define([], function(){
+            return FrequentData;
+        });
+    } else {
+        window.FrequentData = FrequentData; 
+    }
+}());
