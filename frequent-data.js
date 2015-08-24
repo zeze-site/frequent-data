@@ -8,7 +8,7 @@
  * 保证常用表情的数量不超过最大限制
  */
 
-(function(require){
+define(function(require){
     var $ = require('jquery'),
         lcStorage = require('lcStorage');
 
@@ -55,7 +55,7 @@
         }
 
         if (typeof window.JSON === 'undefined') {
-            require(['lib/json2'], function(_json_){
+            require(['json2'], function(_json_){
                 cb();
             });
         } else {
@@ -229,12 +229,5 @@
         return outData;
     };
 
-    // CommonJS AMD 
-    if ( typeof define === "function" && define.amd) {
-        define([], function(){
-            return FrequentData;
-        });
-    } else {
-        window.FrequentData = FrequentData; 
-    }
-}());
+    return FrequentData;
+});
