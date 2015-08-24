@@ -1,0 +1,29 @@
+{
+  "name": "zeze-frequent-data",
+  "main": "frequent-data.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/zeze-site/frequent-data",
+  "authors": [
+    "shuizhongyueming <shuizhongyueming@gmail.com>"
+  ],
+  "description": "常用数据的一个本地记录和维护的工具",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "zeze",
+    "requirejs",
+    "frequent",
+    "localStorage",
+    "json2"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
