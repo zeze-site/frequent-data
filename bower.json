@@ -28,7 +28,8 @@
   ],
   "dependencies": {
     "localStorage": "~1.0.0",
-    "json2": "*"
+    "json2": "*",
+    "base64": "~0.3.0"
   },
   "devDependencies": {
     "art-template": "~3.0.1",
