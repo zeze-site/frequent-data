@@ -35,5 +35,25 @@
     "art-template": "~3.0.1",
     "requirejs": "~2.1.20",
     "jquery": "1.9.1"
+  },
+  "exportsOverride": {
+    "art-template": {
+        "js": "dist/template.js"
+    },
+    "jquery": {
+        "js": "jquery.js"
+    },
+    "json2": {
+        "js": "json2.js"
+    },
+    "localStorage": {
+        "js": "js/localStorage.js"
+    },
+    "base64": {
+        "js": "base64.js"
+    },
+    "requirejs": {
+        "js": "require.js"
+    }
   }
 }

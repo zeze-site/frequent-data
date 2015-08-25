@@ -1,10 +1,11 @@
 require.config({
 
     paths: {
-        "jquery": "bower_components/jquery/jquery.min",
-        "template": "bower_components/art-template/dist/template",
-        "lcStorage": "bower_components/localStorage/js/localStorage",
-        "json2": "bower_components/json2/json2",
+        "jquery": "lib/jquery/js/jquery",
+        "template": "lib/art-template/js/template",
+        "lcStorage": "lib/localStorage/js/localStorage",
+        "json2": "lib/json2/js/json2",
+        "base64": "lib/base64/js/base64",
         "frequentData": "frequent-data"
     },
     waitSeconds: 90

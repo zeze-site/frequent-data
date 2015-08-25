@@ -1,6 +1,6 @@
 
 {
-    "directory": "lib/",
+    "directory": "bower_components/",
     "strict-ssl": false,
     "color": true
 }
