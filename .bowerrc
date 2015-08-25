@@ -1,0 +1,6 @@
+
+{
+    "directory": "lib/",
+    "strict-ssl": false,
+    "color": true
+}
