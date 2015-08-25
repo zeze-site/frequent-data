@@ -86,7 +86,13 @@ define(function(require){
                 if (data === null) {
                     me.groupData = []; 
                 } else {
-                    me.groupData = JSON.parse(window.atob(data));
+                    
+                    // 早期是直接存储的json，需要做一个兼容
+                    if (data.match(/\{|\[/g)) {
+                        me.groupData = JSON.parse(data);
+                    } else {
+                        me.groupData = JSON.parse(window.atob(data));
+                    }
                 }
 
                 if ($.isFunction(cb)) {
