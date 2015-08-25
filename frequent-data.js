@@ -56,7 +56,13 @@ define(function(require){
 
         if (typeof window.JSON === 'undefined') {
             require(['json2'], function(_json_){
-                cb();
+                if (!!(window.atob && windwo.btoa)) {
+                    require(['base64'], function(__base64__){
+                        cb();
+                    });
+                } else {
+                    cb();
+                }
             });
         } else {
             cb();
@@ -80,7 +86,7 @@ define(function(require){
                 if (data === null) {
                     me.groupData = []; 
                 } else {
-                    me.groupData = JSON.parse(data);
+                    me.groupData = JSON.parse(window.atob(data));
                 }
 
                 if ($.isFunction(cb)) {
@@ -98,7 +104,7 @@ define(function(require){
     FrequentData.prototype.setFrequentData = function (cb){
         var me = this;
         loadJson(function(){
-            lcStorage.setItem(me.localKey, JSON.stringify(me.groupData.slice(0,me.maxCacheNum)), me.localDomain, function(){
+            lcStorage.setItem(me.localKey, window.btoa(JSON.stringify(me.groupData.slice(0,me.maxCacheNum))), me.localDomain, function(){
                 if ($.isFunction(cb)) {
                     cb();
                 }
