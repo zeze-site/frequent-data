@@ -91,7 +91,7 @@ define(function(require){
                     if (data.match(/\{|\[/g)) {
                         me.groupData = JSON.parse(data);
                     } else {
-                        me.groupData = JSON.parse(window.atob(data));
+                        me.groupData = JSON.parse(decodeURIComponent(window.atob(data)));
                     }
                 }
 
@@ -110,7 +110,7 @@ define(function(require){
     FrequentData.prototype.setFrequentData = function (cb){
         var me = this;
         loadJson(function(){
-            lcStorage.setItem(me.localKey, window.btoa(JSON.stringify(me.groupData.slice(0,me.maxCacheNum))), me.localDomain, function(){
+            lcStorage.setItem(me.localKey, window.btoa(encodeURIComponent(JSON.stringify(me.groupData.slice(0,me.maxCacheNum)))), me.localDomain, function(){
                 if ($.isFunction(cb)) {
                     cb();
                 }
