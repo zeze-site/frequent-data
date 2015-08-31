@@ -42,7 +42,7 @@ define(function(require){
             localKey : 'zeze-frequent-smile-log',
             localDomain : 'http://'+location.host,
 
-            groupData : [], // 缓存本地数据
+            groupData : [] // 缓存本地数据
     
         };
 
