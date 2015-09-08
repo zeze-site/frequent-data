@@ -50,21 +50,39 @@ define(function(require){
     }
 
     function loadJson(cb){
+        var count = 0,
+            maxCount = 2;
         if (!$.isFunction(cb)) {
             return;
         }
 
         if (typeof window.JSON === 'undefined') {
             require(['json2'], function(_json_){
-                if (!(window.atob && windwo.btoa)) {
-                    require(['base64'], function(__base64__){
-                        cb();
-                    });
-                } else {
+                count++;
+
+                if (count == maxCount) {
                     cb();
                 }
             });
         } else {
+            count++;
+        }
+
+
+        if (!(window.atob && windwo.btoa)) {
+            require(['base64'], function(__base64__){
+                count++;
+
+                if (count == maxCount) {
+                    cb();
+                }
+            });
+        } else {
+            count++;
+        }
+
+
+        if (count == maxCount) {
             cb();
         }
     }
