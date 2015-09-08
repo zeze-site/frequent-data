@@ -56,7 +56,7 @@ define(function(require){
 
         if (typeof window.JSON === 'undefined') {
             require(['json2'], function(_json_){
-                if (!!(window.atob && windwo.btoa)) {
+                if (!(window.atob && windwo.btoa)) {
                     require(['base64'], function(__base64__){
                         cb();
                     });
