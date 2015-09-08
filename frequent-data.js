@@ -69,7 +69,7 @@ define(function(require){
         }
 
 
-        if (!(window.atob && windwo.btoa)) {
+        if (!(window.atob && window.btoa)) {
             require(['base64'], function(__base64__){
                 count++;
 
